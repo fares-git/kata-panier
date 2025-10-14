@@ -1,0 +1,23 @@
+<section aria-labelledby="cart-title" class="cart-list">
+  <h2 class="cart-list__title" id="cart-title">Mon Panier</h2>
+
+  @for (item of cart; track item.product.id) {
+    <app-cart
+      [$productInCart]="item.product"
+      [$productAvailableQuantity]="item.quantity"
+      (removeFromCart)="remove($event)"
+      role="listitem"
+    />
+  } @empty {
+    <div class="cart-empty d-flex flex-column justify-content-center align-items-center text-center">
+      <img src="/images/emptycarttrn.png" alt="Panier vide" class="cart-empty__image"/>
+      <p class="cart-empty__text mt-3">Panier vide</p>
+    </div>
+  }
+
+  @if (cart.length > 0) {
+    <div class="container my-4">
+      <app-cart-summary></app-cart-summary>
+    </div>
+  }
+</section>

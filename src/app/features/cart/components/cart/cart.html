@@ -1,0 +1,65 @@
+<mat-card class="cart-item" role="region" aria-label="Produit dans le panier">
+  <mat-card-content class="cart-item__content" role="group" aria-labelledby="product-title">
+
+    <div class="cart-item__row">
+
+      <div class="cart-item__info">
+        <h6 class="cart-item__title" id="product-title">
+          {{ $productInCart()?.productName }}
+        </h6>
+        <p class="cart-item__category" aria-label="Catégorie du produit">
+          [{{ $productInCart()?.category }}]
+        </p>
+      </div>
+
+
+      <div class="cart-item__quantity" role="group" aria-label="Quantity controls">
+        <button (click)="removeOneFromCart()"  class="cart-item__btn cart-item__btn--decrease" aria-label="Decrease quantity">
+          <i class="fa-solid fa-minus" aria-hidden="true"></i>
+        </button>
+
+        <div class="cart-item__value" aria-live="polite" aria-atomic="true">
+          <strong class="cart-item__label">Quantité</strong>
+          <span class="cart-item__number">{{ $productAvailableQuantity() }}</span>
+        </div>
+
+        <button (click)="addOneToCart()" class="cart-item__btn cart-item__btn--increase" aria-label="Increase quantity">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="cart-item__pricing" aria-label="Informations sur le prix et les taxes">
+        <div class="cart-item__taxes" aria-label="Montant des taxes">
+          Taxes :
+          {{ calculateBaseTax({ product: $productInCart()!, quantity: $productAvailableQuantity() })
+          | currency:'EUR':'symbol':'1.2-2':'fr' }}
+        </div>
+
+        <div class="cart-item__price-ht" aria-label="Prix unitaire hors taxe">
+          Prix HT :
+          {{ $productInCart()?.price | currency:'EUR':'symbol':'1.2-2':'fr' }}
+        </div>
+
+        <div class="cart-item__price-ttc" aria-label="Prix unitaire TTC">
+          Prix TTC :
+          {{ calculateTTC($productInCart()!) | currency:'EUR':'symbol':'1.2-2':'fr' }}
+        </div>
+      </div>
+
+      <div class="cart-item__actions">
+        <button
+          mat-icon-button
+          color="warn"
+          type="button"
+          (click)="remove($productInCart()?.id)"
+          [attr.aria-label]="'Retirer ' + $productInCart()?.productName + ' du panier'"
+          title="Retirer du panier"
+          class="cart-item__remove-btn"
+        >
+          <mat-icon aria-hidden="true">delete</mat-icon>
+        </button>
+      </div>
+
+    </div>
+  </mat-card-content>
+</mat-card>

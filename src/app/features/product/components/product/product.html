@@ -1,0 +1,89 @@
+<mat-card
+  class="product-card"
+  role="region"
+  [attr.aria-labelledby]="'product-title'"
+  [attr.aria-describedby]="
+    'product-category product-price-ht product-price-ttc' +
+    (isStillAvailable?  '':' product-unavailable')
+  "
+>
+  <mat-card-content class="product-card__body">
+    <h5 class="product-card__title" id="product-title">
+      {{ $product().productName }}
+    </h5>
+
+    <p class="product-card__category" id="product-category" aria-label="Catégorie du produit">
+      Catégorie : {{ $product().category }}
+    </p>
+
+    <p class="product-card__price-ht" id="product-price-ht" aria-label="Prix hors taxe">
+      Prix HT :
+      {{ $product().price | currency:'EUR':'symbol':'1.2-2':'fr' }}
+    </p>
+
+    <strong class="product-card__price-ttc" id="product-price-ttc" aria-label="Prix toutes taxes comprises">
+      Prix TTC :
+      {{ calculateTTC($product()!) | currency:'EUR':'symbol':'1.2-2':'fr' }}
+    </strong>
+    @if (!isStillAvailable) {
+      <p
+        id="product-unavailable"
+        class="product-card__status product-card__status--unavailable"
+        role="status"
+        aria-live="polite"
+      >
+        Non disponible
+      </p>
+    }
+
+    @else {
+      <form
+        [formGroup]="productForm"
+        class="product-card__form"
+        role="group"
+        aria-label="Ajouter le produit au panier"
+      >
+        <p
+          id="product-available"
+          class="product-card__status product-card__status--available"
+          role="status"
+          aria-live="polite"
+        >
+          En stock : {{ $product().quantity }}
+        </p>
+
+        <div class="product-card__form-row">
+          <mat-form-field appearance="outline" class="product-card__field">
+            <mat-label>Quantité</mat-label>
+            <input
+              matInput
+              type="number"
+              min="1"
+              [max]="$product().quantity"
+              formControlName="quantity"
+              [id]="'quantity-' + $product().id"
+              [attr.aria-label]="'Saisir la quantité pour ' + $product().productName"
+            />
+            <mat-error *ngIf="quantity.errors?.['required']">Quantité requise</mat-error>
+            <mat-error *ngIf="quantity.errors?.['min']">Minimum 1</mat-error>
+            <mat-error *ngIf="quantity.errors?.['max']">
+              Maximum {{ $product().quantity }}
+            </mat-error>
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            class="product-card__add-btn"
+            (click)="addProduct()"
+            [disabled]="quantity.invalid || $product().quantity === 0"
+            [attr.aria-label]="'Ajouter ' + $product().productName + ' au panier'"
+          >
+            Ajouter
+          </button>
+        </div>
+      </form>
+    }
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,8 @@
+<span
+  [attr.aria-label]="'Panier contenant ' + countCartItems() + ' ' + (countCartItems() > 1 ? 'produits' : 'produit')"
+  aria-live="polite"
+  class="cart-counter"
+  role="status"
+>
+  {{ countCartItems() }}
+</span>

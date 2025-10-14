@@ -1,23 +1,33 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { App } from './app';
+import { RouterTestingModule } from '@angular/router/testing';
+import {CartCounter} from './shared/components/cart-counter/cart-counter';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {Navbar} from './shared/components/app-header/navbar';
+import {Footer} from './shared/components/footer/footer';
 
-describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
+describe('App Component', () => {
+  let fixture: ComponentFixture<App>;
+  let component: App;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        App,
+        Navbar,
+        Footer,
+        RouterTestingModule,
+        CartCounter,
+        HttpClientTestingModule,
+      ],
     }).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(App);
+    fixture = TestBed.createComponent(App);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, kata-panier');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

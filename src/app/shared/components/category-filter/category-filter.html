@@ -1,0 +1,31 @@
+<section aria-labelledby="filter-title" role="region" class="filter">
+  <h5 id="filter-title">Filtrer</h5>
+
+  <mat-divider></mat-divider>
+
+  <div aria-level="6" role="heading" class="filter-header">
+    <span id="category-group-label">Catégories</span>
+  </div>
+
+  <mat-radio-group
+    aria-labelledby="category-group-label"
+    color="primary"
+    class="radio-group"
+    [value]="selectedCategory"
+    (change)="onCategorySelect($event.value)"
+
+  >
+    <mat-radio-button value="" aria-label="Toutes les catégories">
+      Tout
+    </mat-radio-button>
+
+    @for (category of categories; track category) {
+      <mat-radio-button
+        [value]="category"
+        [attr.aria-label]="'Catégorie ' + category"
+      >
+        {{ category }}
+      </mat-radio-button>
+    }
+  </mat-radio-group>
+</section>

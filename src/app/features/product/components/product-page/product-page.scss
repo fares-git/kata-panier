@@ -1,0 +1,122 @@
+/* Block: product-page */
+.product-page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Block: product-page__sidebar (Similar to layout__sidebar) */
+.product-page__sidebar {
+  min-height: 100vh;
+  background-color: #f8fbff;
+  border-right: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  z-index: 0;
+}
+
+/* Block: product-page__content (Similar to layout__content) */
+.product-page__content {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Block: product-page__container (Similar to layout__container) */
+.product-page__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Block: product-page__row (Similar to layout__row) */
+.product-page__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Block: product-page__col (Similar to layout__col) */
+.product-page__col {
+  flex: 1 0 100%;
+}
+
+.product-page__col--md-6 {
+  flex: 1 0 50%;
+}
+
+.product-page__col--lg-4 {
+  flex: 1 0 33.33%;
+}
+
+/* Block: product-card */
+.product-page__product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Modifier for hover effect on product card */
+.product-page__product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Block: category-filter (Similar to category-filter in styles.scss) */
+.product-page__category-filter {
+  display: block;
+}
+
+/* Modifier: mobile view for the sidebar */
+@media (max-width: 767px) {
+  .product-page {
+    flex-direction: column !important;
+  }
+
+  .product-page__sidebar {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: start;
+    overflow-x: auto;
+    padding: 10px 15px;
+    background-color: #f8fbff;
+  }
+
+  /* Element: category-filter inside sidebar for mobile */
+  .product-page__sidebar .product-page__category-filter {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .product-page__sidebar .form-check {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .product-page__content {
+    padding: 15px;
+  }
+}
+
+/* Global styles */
+body, html {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

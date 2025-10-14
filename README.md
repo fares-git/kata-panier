@@ -1,59 +1,46 @@
-# KataPanier
+# Kata Panier
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+---
+## Description
 
-## Development server
+Cette application est une plateforme e-commerce simple développée en Angular 20.  
+Elle inclut les fonctionnalités suivantes :
 
-To start a local development server, run:
+- Gestion de produits (`ProductPage`, `Product`)
+- Gestion du panier (`CartPage`, `Cart`, `CartSummary`)
+- Filtrage des produits par catégorie (`CategoryFilter`)
+- Compteur de panier en temps réel (`CartCounter`)
+- Architecture basée sur des **signaux Angular** (`signal`, `computed`, `effect`) pour gérer l’état global
+- Utilisation de composants **standalone Angular 20**
+- Simulation de persistance locale via `LocalStorageService`
+- Communication avec un backend via `ProductApi` (HTTP)
+
+---
+
+## Technologies utilisées
+
+- Angular 20 avec **standalone components**
+- Angular Signals (`signal`, `computed`, `effect`)
+- Angular Material pour UI (`MatCard`, `MatToolbar`, `MatButton`, `MatIcon`, etc.)
+- RxJS pour la gestion des observables
+- TypeScript strict et Reactive Forms
+- Jest pour les tests unitaires
+- LocalStorage pour la persistance du panier
+
+---
+
+## Installation
 
 ```bash
+# Installer les dépendances
+npm install
+
+Lancer l’application
+# Pour dev server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# L'application sera disponible sur http://localhost:4200
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Tests unitaires
+# Lancer Jest
+jest

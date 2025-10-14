@@ -1,0 +1,28 @@
+<div
+  aria-label="Totaux du panier"
+  class="cart-summary"
+  role="region"
+>
+  <div class="cart-summary__column cart-summary__column--start">
+    <h5 class="cart-summary__label" id="label-total-taxes">Total Taxes</h5>
+    <h5 class="cart-summary__label" id="label-total-ttc">Total TTC</h5>
+  </div>
+
+  <div class="cart-summary__column cart-summary__column--end">
+    <h5
+      aria-labelledby="label-total-taxes"
+      aria-live="polite"
+      class="cart-summary__value cart-summary__value--highlight"
+    >
+      {{ getTotalTaxes(cart) | currency:'EUR':'symbol':'1.2-2':'fr' }}
+    </h5>
+
+    <h5
+      aria-labelledby="label-total-ttc"
+      aria-live="polite"
+      class="cart-summary__value cart-summary__value--highlight"
+    >
+      {{ getTotalTTC(cart) | currency:'EUR':'symbol':'1.2-2':'fr' }}
+    </h5>
+  </div>
+</div>
