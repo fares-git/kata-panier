@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { Store } from './store';
-import { ProductApi } from '../../core/product-api';
-import { LocalStorageService } from '../../core/local-storage.service';
+import { ProductApi } from '../../core/services/product-api';
+import { LocalStorageService } from '../../core/services/local-storage.service';
 import { ProductModel } from '../../features/product/models/product-model';
 import { CartItem } from '../../features/cart/models/cart-item';
 import {Category} from '../enums/category';

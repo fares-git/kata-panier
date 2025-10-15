@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
-import {environment} from '../../environments/environment';
+import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {ProductModel} from '../features/product/models/product-model';
+import {ProductModel} from '../../features/product/models/product-model';
 import {firstValueFrom} from 'rxjs';
 
 @Injectable({

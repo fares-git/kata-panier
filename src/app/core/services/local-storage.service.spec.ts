@@ -1,8 +1,8 @@
 import {TestBed} from '@angular/core/testing';
 import {LocalStorageService} from './local-storage.service';
-import {CartItem} from '../features/cart/models/cart-item';
-import {ProductModel} from '../features/product/models/product-model';
-import {Category} from '../shared/enums/category';
+import {CartItem} from '../../features/cart/models/cart-item';
+import {ProductModel} from '../../features/product/models/product-model';
+import {Category} from '../../shared/enums/category';
 
 describe('LocalStorageService', () => {
   let service: LocalStorageService;

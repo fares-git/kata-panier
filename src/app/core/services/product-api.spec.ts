@@ -1,9 +1,9 @@
 import {TestBed} from '@angular/core/testing';
 import {ProductApi} from './product-api';
 import {HttpClientTestingModule, HttpTestingController, TestRequest} from '@angular/common/http/testing';
-import {ProductModel} from '../features/product/models/product-model';
-import {environment} from '../../environments/environment';
-import {Category} from '../shared/enums/category';
+import {ProductModel} from '../../features/product/models/product-model';
+import {environment} from '../../../environments/environment';
+import {Category} from '../../shared/enums/category';
 
 describe('ProductApi', () => {
   let service: ProductApi;
