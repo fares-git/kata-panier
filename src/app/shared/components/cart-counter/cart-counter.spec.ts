@@ -1,7 +1,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CartCounter } from './cart-counter';
 import { signal, WritableSignal } from '@angular/core';
-import {Store} from '../../../core/store';
+import {Store} from '../../store/store';
 
 describe('CartCounter Component', () => {
   let fixture: ComponentFixture<CartCounter>;

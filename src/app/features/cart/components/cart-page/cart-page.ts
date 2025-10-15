@@ -2,7 +2,7 @@ import {Component, effect} from '@angular/core';
 import {Cart} from "../cart/cart";
 import {CartItem} from "../../models/cart-item";
 import {CartSummary} from "../cart-summary/cart-summary";
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 
 @Component({
   selector: 'app-cart-page',

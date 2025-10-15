@@ -1,8 +1,8 @@
 import {computed, effect, inject, Injectable, Signal, signal, WritableSignal} from '@angular/core';
-import {ProductApi} from './product-api';
-import {LocalStorageService} from './local-storage.service';
-import {ProductModel} from '../features/product/models/product-model';
-import {CartItem} from '../features/cart/models/cart-item';
+import {ProductApi} from '../../core/product-api';
+import {LocalStorageService} from '../../core/local-storage.service';
+import {ProductModel} from '../../features/product/models/product-model';
+import {CartItem} from '../../features/cart/models/cart-item';
 
 @Injectable({providedIn: 'root'})
 export class Store {

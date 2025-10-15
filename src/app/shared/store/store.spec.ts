@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { Store } from './store';
-import { ProductApi } from './product-api';
-import { LocalStorageService } from './local-storage.service';
-import { ProductModel } from '../features/product/models/product-model';
-import { CartItem } from '../features/cart/models/cart-item';
-import {Category} from '../shared/enums/category';
+import { ProductApi } from '../../core/product-api';
+import { LocalStorageService } from '../../core/local-storage.service';
+import { ProductModel } from '../../features/product/models/product-model';
+import { CartItem } from '../../features/cart/models/cart-item';
+import {Category} from '../enums/category';
 
 describe('Store', () => {
   let store: Store;

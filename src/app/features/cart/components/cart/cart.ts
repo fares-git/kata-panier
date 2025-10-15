@@ -6,7 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatCard, MatCardContent} from '@angular/material/card';
 import {MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon'
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {CartItem} from '../../models/cart-item';
 
 @Component({

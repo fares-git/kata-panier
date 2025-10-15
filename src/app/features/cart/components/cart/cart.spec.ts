@@ -9,7 +9,7 @@ import { CartItem } from '../../models/cart-item';
 import {MatCard, MatCardContent} from '@angular/material/card';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 
 describe('Cart Component', () => {
   let component: Cart;

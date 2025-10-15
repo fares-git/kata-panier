@@ -9,13 +9,13 @@ import {
   OutputEmitterRef
 } from '@angular/core';
 import {ProductModel} from "../../models/product-model";
-import {CurrencyPipe, NgIf} from "@angular/common";
+import {CurrencyPipe} from "@angular/common";
 import {CartItem} from "../../../cart/models/cart-item";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatCard, MatCardContent} from '@angular/material/card';
 import {MatError, MatFormField, MatInput, MatLabel} from '@angular/material/input';
 import {MatButton} from '@angular/material/button';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {TaxUtils} from '../../../../shared/utils/tax.util';
 
 
@@ -25,7 +25,6 @@ import {TaxUtils} from '../../../../shared/utils/tax.util';
   imports: [
     CurrencyPipe,
     ReactiveFormsModule,
-    NgIf,
     MatCard,
     MatCardContent,
     MatInput,

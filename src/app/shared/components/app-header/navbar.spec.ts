@@ -6,7 +6,7 @@ import { signal } from '@angular/core';
 import {MatToolbar} from '@angular/material/toolbar';
 import {MatIconButton} from '@angular/material/button';
 import {MatIcon} from '@angular/material/icon';
-import {Store} from '../../../core/store';
+import {Store} from '../../store/store';
 
 describe('Navbar Component', () => {
   let fixture: ComponentFixture<Navbar>;

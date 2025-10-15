@@ -1,11 +1,10 @@
 .filter {
   padding: 1rem;
-}
-
-.filter h5 {
   font-weight: 600;
   margin-bottom: 1rem;
+
 }
+
 
 .filter-header {
   margin-top: 1rem;
@@ -14,7 +13,7 @@
 
 .filter-header span {
   font-weight: 600;
-  color: #1976d2; /* Angular Material primary color */
+  color: #1976d2;
 }
 
 .radio-group {
@@ -23,7 +22,7 @@
   gap: 0.5rem;
 }
 
-/* Stack vertically on medium+ screens */
+
 @media (min-width: 768px) {
   .radio-group {
     flex-direction: column;

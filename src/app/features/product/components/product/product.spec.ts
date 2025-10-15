@@ -1,8 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {Product} from './product';
 import {FormBuilder, ReactiveFormsModule} from '@angular/forms';
-import {CurrencyPipe, NgIf} from '@angular/common';
-import {Store} from '../../../../core/store';
+import {CurrencyPipe} from '@angular/common';
+import {Store} from '../../../../shared/store/store';
 import {ProductModel} from '../../models/product-model';
 import {Category} from '../../../../shared/enums/category';
 import {MatCard, MatCardContent} from '@angular/material/card';
@@ -36,7 +36,6 @@ describe('Product Component', () => {
         Product,
         ReactiveFormsModule,
         CurrencyPipe,
-        NgIf,
         MatCard,
         MatCardContent,
         MatInput,

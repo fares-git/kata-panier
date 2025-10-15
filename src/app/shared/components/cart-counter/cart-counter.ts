@@ -1,5 +1,5 @@
 import {Component, computed, inject, Signal} from '@angular/core';
-import {Store} from '../../../core/store';
+import {Store} from '../../store/store';
 
 @Component({
   selector: 'app-cart-counter',

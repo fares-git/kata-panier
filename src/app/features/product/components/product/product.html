@@ -8,9 +8,9 @@
   "
 >
   <mat-card-content class="product-card__body">
-    <h5 class="product-card__title" id="product-title">
+    <div class="product-card__title" id="product-title">
       {{ $product().productName }}
-    </h5>
+    </div>
 
     <p class="product-card__category" id="product-category" aria-label="Catégorie du produit">
       Catégorie : {{ $product().category }}
@@ -34,13 +34,11 @@
       >
         Non disponible
       </p>
-    }
-
-    @else {
+    } @else {
       <form
         [formGroup]="productForm"
         class="product-card__form"
-        role="group"
+        role="form"
         aria-label="Ajouter le produit au panier"
       >
         <p
@@ -64,11 +62,18 @@
               [id]="'quantity-' + $product().id"
               [attr.aria-label]="'Saisir la quantité pour ' + $product().productName"
             />
-            <mat-error *ngIf="quantity.errors?.['required']">Quantité requise</mat-error>
-            <mat-error *ngIf="quantity.errors?.['min']">Minimum 1</mat-error>
-            <mat-error *ngIf="quantity.errors?.['max']">
-              Maximum {{ $product().quantity }}
-            </mat-error>
+            @if (quantity.errors?.['required']) {
+              <mat-error>Quantité requise</mat-error>
+
+            }
+            @if (quantity.errors?.['min']) {
+              <mat-error>Minimum 1</mat-error>
+            }
+            @if (quantity.errors?.['max']) {
+              <mat-error>
+                Maximum {{ $product().quantity }}
+              </mat-error>
+            }
           </mat-form-field>
 
           <button

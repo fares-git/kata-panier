@@ -3,7 +3,7 @@ import {FormsModule} from "@angular/forms";
 import {Category} from "../../enums/category";
 import {MatDivider} from '@angular/material/divider';
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
-import {Store} from '../../../core/store';
+import {Store} from '../../store/store';
 
 @Component({
   selector: 'app-category-filter',

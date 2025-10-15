@@ -1,7 +1,7 @@
 import {Component, computed, inject, Signal} from '@angular/core';
 import {CategoryFilter} from "../../../../shared/components/category-filter/category-filter";
 import {Product} from '../product/product';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {ProductModel} from '../../models/product-model';
 
 @Component({

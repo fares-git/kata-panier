@@ -1,24 +1,20 @@
-<div class="d-flex" role="main">
-  <aside aria-labelledby="filter-title" class="sidebar-container">
-    <h2 class="visually-hidden" id="filter-title">Filtrer les produits par catégorie</h2>
+<div class="product-page" role="main">
+  <aside class="product-page__sidebar" aria-labelledby="filter-title">
+    <h2 class="visually-hidden" id="filter-title">
+      Filtrer les produits par catégorie
+    </h2>
     <app-category-filter (categorySelected)="onFilter($event)"></app-category-filter>
   </aside>
 
-  <section aria-labelledby="products-title" class="main-content flex-grow-1 p-4">
+  <section class="product-page__content" aria-labelledby="products-title">
     <h1 class="visually-hidden" id="products-title">Liste des produits</h1>
 
-    <div class="container-fluid">
-
-      <div class="row" role="list">
-        @for (product of products(); track product.id) {
-          <div class="col-12 col-md-6  col-lg-4 mt-4" role="listitem">
-            <app-product
-              [$product]="product">
-            </app-product>
-          </div>
-        }
-      </div>
-
+    <div class="product-page__grid" role="list">
+      @for (product of products(); track product.id) {
+        <div class="product-page__grid-item" role="listitem">
+          <app-product [$product]="product"></app-product>
+        </div>
+      }
     </div>
   </section>
 </div>

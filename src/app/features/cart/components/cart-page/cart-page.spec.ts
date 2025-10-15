@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {CartPage} from './cart-page';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {CartItem} from '../../models/cart-item';
 import {signal} from '@angular/core';
 import {Category} from '../../../../shared/enums/category';

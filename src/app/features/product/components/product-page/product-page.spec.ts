@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {signal, WritableSignal} from '@angular/core';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {Category} from '../../../../shared/enums/category';
 import {CategoryFilter} from '../../../../shared/components/category-filter/category-filter';
 import '@angular/common/locales/global/fr';

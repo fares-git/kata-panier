@@ -2,7 +2,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {CategoryFilter} from './category-filter';
 import {signal, WritableSignal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Store} from '../../../core/store';
+import {Store} from '../../store/store';
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {MatDivider} from '@angular/material/divider';
 

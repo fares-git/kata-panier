@@ -3,7 +3,7 @@ import {CartSummary} from './cart-summary';
 import {CartItem} from '../../models/cart-item';
 import {CurrencyPipe} from '@angular/common';
 import {signal, WritableSignal} from '@angular/core';
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 import {ProductModel} from '../../../product/models/product-model';
 import {Category} from '../../../../shared/enums/category';
 import {TaxUtils} from '../../../../shared/utils/tax.util';

@@ -2,7 +2,7 @@ import {CurrencyPipe} from '@angular/common';
 import {Component, effect} from '@angular/core';
 import {CartItem} from "../../models/cart-item";
 import {TaxUtils} from "../../../../shared/utils/tax.util";
-import {Store} from '../../../../core/store';
+import {Store} from '../../../../shared/store/store';
 
 @Component({
   selector: 'app-cart-summary',
