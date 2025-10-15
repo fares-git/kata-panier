@@ -28,6 +28,15 @@ Elle inclut les fonctionnalités suivantes :
 - LocalStorage pour la persistance du panier
 
 ---
+## Prérequis
+
+- **Node.js** (version 18 ou plus récente)  
+  [Télécharger ici](https://nodejs.org/)
+- **npm** (inclus avec Node.js)
+- **Angular CLI** (version 20 ou supérieure)
+  ```bash
+  npm install -g @angular/cli
+  ```
 
 ## Installation
 
@@ -35,12 +44,13 @@ Elle inclut les fonctionnalités suivantes :
 # Installer les dépendances
 npm install
 
-Lancer l’application
-# Pour dev server
-ng serve
+#Lancer l’application
+# Pour dev server une configuration spécifique, 
+# pour utiliser des données simulées avec MSW :
+ng serve --configuration=mock 
 
 # L'application sera disponible sur http://localhost:4200
 
-Tests unitaires
+# Tests unitaires
 # Lancer Jest
 jest
