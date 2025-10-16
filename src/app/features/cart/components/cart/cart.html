@@ -36,12 +36,12 @@
         </div>
 
         <div class="cart-item__price-ht" aria-label="Prix unitaire hors taxe">
-          Prix HT :
+          Prix unitaire HT :
           {{ $productInCart()?.price | currency:'EUR':'symbol':'1.2-2':'fr' }}
         </div>
 
         <div class="cart-item__price-ttc" aria-label="Prix unitaire TTC">
-          Prix TTC :
+          Prix unitaire TTC :
           {{ calculateTTC($productInCart()!) | currency:'EUR':'symbol':'1.2-2':'fr' }}
         </div>
       </div>
